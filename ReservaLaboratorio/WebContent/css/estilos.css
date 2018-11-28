@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+
+#geral {
+	width: 900px;
+	margin: 0 auto;
+	border: 1px solid gray;
+	background: orange;
+}
+
+#conteudo-1 {
+	width: 197px;
+	padding: 3px;
+	float: left;
+	background: green;
+}
+
+#conteudo-2 {
+	width: 397;
+	padding: 3px;
+	background: blue;
+}
+
+#conteudo-3 {
+	width: 177px;
+	padding: 3px;
+	float: right;
+	background: maroon;
+}

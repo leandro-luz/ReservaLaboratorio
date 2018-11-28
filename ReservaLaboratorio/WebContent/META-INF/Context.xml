@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Context auth="Container">
+	<Resource name="jdbc/UsersDB" auth="Container" type="javax.sql.DataSource"
+	url="jdbc:mysql://localhost:3306/qualidade?useTimezone=true&amp;serverTimezone=UTC&amp;autoReconnect=true&amp;useSSL=false"
+	driverClassName="com.mysql.cj.jdbc.Driver" username="root" password=""
+	maxTotal="100" maxIdle="20" />
+</Context>
