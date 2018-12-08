@@ -22,6 +22,9 @@ public class AdicionaUsuarioLogica implements Logica {
 			String senhaTxt1 = req.getParameter("senha1");
 			String senhaTxt2 = req.getParameter("senha2");
 			
+			if(matricula.length()<8) {
+				erros.add("A matricula não tem 8 caracteres");
+			}
 			if(senhaTxt1 == null) {
 				erros.add("A senha não foi informada!");
 			}

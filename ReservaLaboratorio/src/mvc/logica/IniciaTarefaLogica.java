@@ -62,7 +62,7 @@ public class IniciaTarefaLogica implements Logica {
 			atualizarPerfil(req);
 		}
 		
-		if (u.getPerfil() == 3) {
+		if (u == null || u.getPerfil() == 3) {
 			if (req.getSession().getLastAccessedTime() < Usuario.getDataAtualizacao()) {
 				atualizarUsuario(req);
 			}
