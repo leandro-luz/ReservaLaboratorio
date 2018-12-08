@@ -20,13 +20,18 @@ import modelo.Laboratorio;
 import modelo.Perfil;
 import modelo.Tabela;
 import modelo.Usuario;
+import util.Aviso;
+import util.Erro;
 
 public class IniciaTarefaLogica implements Logica {
 
 	public String executa(HttpServletRequest req, HttpServletResponse res)
 			throws Exception {
 		String url = req.getParameter("url");
+		String novo = req.getParameter("new");
 		Usuario user = (Usuario) req.getSession().getAttribute("usuarioLogado");
+		Erro erros = new Erro();
+		Aviso avisos = new Aviso();
 
 		if ((user == null || Usuario.totalListaUsuario() == 0 || !Usuario.existeUsuarioLista(user.getId()))
 				&&(!url.equalsIgnoreCase("/WEB-INF/jsp/novoUsuario.jsp"))) {
@@ -38,12 +43,18 @@ public class IniciaTarefaLogica implements Logica {
 			} else {
 				atualizarParcial(req, user);
 			}
+			if(novo != null && novo.equalsIgnoreCase("new")) {
+				req.getSession().setAttribute("mensagens", erros);
+				req.getSession().setAttribute("noticias", avisos);
+			}
+			
 		}
 		return url;
 
 	}
 
 	private void atualizarParcial(HttpServletRequest req, Usuario u) {
+		
 		if (req.getSession().getLastAccessedTime() < Area.getDataAtualizacao()) {
 			atualizarArea(req);
 			atualizarAreaJason(req);
@@ -62,7 +73,7 @@ public class IniciaTarefaLogica implements Logica {
 			atualizarPerfil(req);
 		}
 		
-		if (u == null || u.getPerfil() == 3) {
+		if (u != null && u.getPerfil() == 3) {
 			if (req.getSession().getLastAccessedTime() < Usuario.getDataAtualizacao()) {
 				atualizarUsuario(req);
 			}
@@ -89,7 +100,7 @@ public class IniciaTarefaLogica implements Logica {
 		//seta para 1 como atualizado
 		req.getSession().setAttribute("start", "1");
 	}
-
+	
 	private void atualizarPerfil(HttpServletRequest req) {
 		List<Perfil> perfis = new PerfilDAO().getList();
 		req.getSession().setAttribute("perfis", perfis);

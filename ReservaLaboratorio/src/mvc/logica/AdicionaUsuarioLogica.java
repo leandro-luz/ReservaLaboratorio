@@ -77,7 +77,7 @@ public class AdicionaUsuarioLogica implements Logica {
 			}
 			
 			req.getSession().setAttribute("mensagens", erros);
-			//req.getSession().setAttribute("noticias", avisos);
+			req.getSession().setAttribute("noticias", avisos);
 		}
 		return url;
 	}

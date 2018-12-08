@@ -15,12 +15,12 @@
 		<tr>
 
 			<td><a
-				href="mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/agendamento.jsp">
+				href="mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/agendamento.jsp">
 					Reservas</a></td>
 
 
 			<td><a
-				href="mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/dadosUsuario.jsp">
+				href="mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/dadosUsuario.jsp">
 					Olá-- ${sessionScope.usuarioLogado.nome}</a></td>
 
 			<td><a href="mvc?logica=Login&bOK=null"> Sair</a></td>
@@ -29,11 +29,11 @@
 				test="${sessionScope.usuarioLogado.perfil != null && sessionScope.usuarioLogado.perfil == 3}">
 
 				<td><a
-					href="mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/administrador.jsp">
+					href="mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/administrador.jsp">
 						Administração</a></td>
 
 				<td><a
-					href="mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/usuariosLogados.jsp">Usuários
+					href="mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/usuariosLogados.jsp">Usuários
 						logados: ${sessionScope.qtdUsuariosLogados} </a></td>
 						
 			</c:if>

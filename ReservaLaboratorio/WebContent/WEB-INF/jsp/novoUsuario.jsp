@@ -59,7 +59,7 @@
 			</tr>
 		</table>
 	</form>
-	<form method="post" action="login.jsp">
+	<form method="post" action="mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/login.jsp">
 		<input type="submit" name="bOK" value="Voltar" />
 	</form>
 
