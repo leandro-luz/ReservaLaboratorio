@@ -72,6 +72,8 @@ public class AdicionaUsuarioLogica implements Logica {
 					erros.add("Usuario já cadastrado ou email já cadastrado");
 					url = "mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/novoUsuario.jsp";
 				}
+			}else {
+				url = "mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/novoUsuario.jsp";
 			}
 			
 			req.getSession().setAttribute("mensagens", erros);
