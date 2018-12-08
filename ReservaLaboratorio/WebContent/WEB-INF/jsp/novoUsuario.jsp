@@ -33,7 +33,7 @@
 			<tr>
 				<th>Matrícula:</th>
 				<td><input type="number" name="matricula" required
-					placeholder="somente números">Têm que ter 8 caracteres</td>
+					placeholder="somente números">Têm que ter 8 caracteres!</td>
 			</tr>
 			<tr>
 				<th>Nome:</th>
