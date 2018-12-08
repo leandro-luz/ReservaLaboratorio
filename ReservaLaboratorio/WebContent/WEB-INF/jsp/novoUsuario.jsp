@@ -31,9 +31,9 @@
 	<form method="post" action="mvc?logica=AdicionaUsuarioLogica">
 		<table>
 			<tr>
-				<th>Matricula:</th>
+				<th>Matrícula:</th>
 				<td><input type="number" name="matricula" required
-					placeholder="somente números"></td>
+					placeholder="somente números">Têm que ter 8 caracteres</td>
 			</tr>
 			<tr>
 				<th>Nome:</th>
