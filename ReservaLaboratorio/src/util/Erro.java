@@ -5,8 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class Erro implements Serializable {
-
-	private final long serialVersionUID = 5801842926256625063L;
+	private static final long serialVersionUID = 1L;
 	private final List<String> erros;
 
 	public Erro() {

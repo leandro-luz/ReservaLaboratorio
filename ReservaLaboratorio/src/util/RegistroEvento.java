@@ -16,8 +16,6 @@ public class RegistroEvento {
 		String dataTime = null;
 		String nome = null;
 		String matricula = null;
-		Integer area = null;
-		Integer subarea = null;
 		int perfil = 0;
 
 		if (u != null) {

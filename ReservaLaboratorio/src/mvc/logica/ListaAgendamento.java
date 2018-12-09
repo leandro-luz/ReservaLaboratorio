@@ -16,8 +16,6 @@ public class ListaAgendamento implements Logica {
 			throws Exception {
 		Erro erros = new Erro();
 		String url = "/WEB-INF/jsp/agendamento.jsp";
-		String dt_form_inicio = null;
-		String dt_form_fim = null;
 		Integer dt_inicio;
 		Integer dt_fim;
 		Integer areaId = 0;
