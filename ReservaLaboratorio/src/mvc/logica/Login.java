@@ -61,7 +61,7 @@ public class Login extends HttpServlet implements Logica {
 							dao.setAcesso(user);
 							// verificar se o email já foi confirmado
 							if (user.isMailConfirm()) {
-								url = "mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/agendamento.jsp";
+								url = "mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/agendamento.jsp";
 							} else {
 								url = "mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/alterarSenha.jsp";
 							}

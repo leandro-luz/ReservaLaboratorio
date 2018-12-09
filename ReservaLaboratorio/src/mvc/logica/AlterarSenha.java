@@ -13,7 +13,7 @@ public class AlterarSenha implements Logica {
 
 	@Override
 	public String executa(HttpServletRequest req, HttpServletResponse res) throws Exception {
-		String url = "mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/dadosUsuario.jsp";
+		String url = "mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/dadosUsuario.jsp";
 		Erro erros = new Erro();
 		Aviso avisos = new Aviso();
 
