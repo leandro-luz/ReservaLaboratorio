@@ -22,6 +22,11 @@ public class AdicionaUsuarioLogica implements Logica {
 			String senhaTxt1 = req.getParameter("senha1");
 			String senhaTxt2 = req.getParameter("senha2");
 			
+			
+			if(!Senha.verificarFormato(senhaTxt1)) {
+				erros.add("A senha não está no formato informado!");
+			}
+			
 			if(matricula.length()<8) {
 				erros.add("A matricula não tem 8 caracteres");
 			}
@@ -34,6 +39,7 @@ public class AdicionaUsuarioLogica implements Logica {
 			if(senhaTxt1 != null && !senhaTxt1.equalsIgnoreCase(senhaTxt2)) {
 				erros.add("As senhas não são identicas!");
 			}
+			
 			if (matricula == null || matricula.isEmpty()) {
 				erros.add("Matricula não foi informada!");
 			}
