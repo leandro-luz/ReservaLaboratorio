@@ -30,7 +30,7 @@ public class Administracao implements Logica {
 		String tabela;
 		String update;
 		
-		String url = "mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/administrador.jsp";
+		String url = "mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/administrador.jsp";
 
 		Usuario user = (Usuario) req.getSession().getAttribute("usuarioLogado");
 
