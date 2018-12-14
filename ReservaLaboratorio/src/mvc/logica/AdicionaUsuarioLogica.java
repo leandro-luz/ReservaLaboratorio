@@ -62,7 +62,7 @@ public class AdicionaUsuarioLogica implements Logica {
 						//url = "mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/login.jsp";
 					} catch (RuntimeException e) {
 						e.printStackTrace();
-						//url = "/WEB-INF/jsp/novoUsuario.jsp";
+						//url = "/WEB-INF/jsp/novoUsuario.jsp";;
 					}
 				} else {
 					erros.add("Usuario já cadastrado ou email já cadastrado");
