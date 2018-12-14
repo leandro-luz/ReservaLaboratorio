@@ -63,7 +63,7 @@ public class Login extends HttpServlet implements Logica {
 							if (user.isMailConfirm()) {
 								url = "mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/agendamento.jsp";
 							} else {
-								url = "mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/alterarSenha.jsp";
+								url = "mvc?logica=IniciaTarefaLogica&new=new&url=/WEB-INF/jsp/alterarSenha.jsp";
 							}
 						
 						} else {

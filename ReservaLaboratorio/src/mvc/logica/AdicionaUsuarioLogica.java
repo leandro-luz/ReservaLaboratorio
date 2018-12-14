@@ -1,9 +1,13 @@
 package mvc.logica;
 
+import java.util.Random;
+import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.UsuarioDAO;
+import maill.JavaMail;
 import modelo.Usuario;
 import util.Aviso;
 import util.Erro;
@@ -19,27 +23,10 @@ public class AdicionaUsuarioLogica implements Logica {
 			String matricula = req.getParameter("matricula");
 			String nome = req.getParameter("nome");
 			String email = req.getParameter("email");
-			String senhaTxt1 = req.getParameter("senha1");
-			String senhaTxt2 = req.getParameter("senha2");
-			
-			
-			if(!Senha.verificarFormato(senhaTxt1)) {
-				erros.add("A senha não está no formato informado!");
-			}
-			
+
 			if(matricula.length()<8) {
 				erros.add("A matricula não tem 8 caracteres");
 			}
-			if(senhaTxt1 == null) {
-				erros.add("A senha não foi informada!");
-			}
-			if(senhaTxt2 == null) {
-				erros.add("A senha não foi informada!");
-			}
-			if(senhaTxt1 != null && !senhaTxt1.equalsIgnoreCase(senhaTxt2)) {
-				erros.add("As senhas não são identicas!");
-			}
-			
 			if (matricula == null || matricula.isEmpty()) {
 				erros.add("Matricula não foi informada!");
 			}
@@ -54,9 +41,12 @@ public class AdicionaUsuarioLogica implements Logica {
 				Usuario usuario = new Usuario();
 				usuario.setMatricula(matricula);
 				usuario.setNome(nome);
-				usuario.setSenha(Senha.criptografar(senhaTxt1));
+				UUID uuid = UUID.randomUUID();  
+				
+				String senhaProvisoria = uuid.toString().substring(0,18);
+				usuario.setSenha(Senha.criptografar(senhaProvisoria));
 				usuario.setEmail(email);
-				usuario.setMailConfirm(true);				
+				usuario.setMailConfirm(false);				
 				usuario.setPerfil(1);
 
 				// salva o contato
@@ -66,7 +56,7 @@ public class AdicionaUsuarioLogica implements Logica {
 				if (user == null && existeEmail == null) {
 					try {
 						dao.adiciona(usuario);
-						//JavaMail.enviarEmail(email, senhaProvisoria);
+						JavaMail.enviarEmail(email, senhaProvisoria);
 						avisos.add("Solicitação efetuada com sucesso!");
 						avisos.add("Sistema liberado para logar!");
 						//url = "mvc?logica=IniciaTarefaLogica&url=/WEB-INF/jsp/login.jsp";

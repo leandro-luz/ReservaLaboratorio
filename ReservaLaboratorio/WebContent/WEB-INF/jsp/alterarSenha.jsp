@@ -41,7 +41,7 @@
 			</tr>
 			<tr>
 				<th>Senha Nova:</th>
-				<td><input type="password" name="senhaNova1" required/></td>
+				<td><input type="password" name="senhaNova1" required/>Deve conter no mínimo: 1 letra maiúscula, 1 letra minúscula, 1 caracter especial (#,$,%,&,',(,),*,+,,,-) e 8 caracteres</td>
 			</tr>
 			<tr>
 				<th>Confirma a Senha Nova:</th>

@@ -45,16 +45,6 @@
 				<td><input type="email" name="email" required
 					placeholder="seuemail@enel.com.br"></td>
 			</tr>
-			<tr>
-				<th>Senha:</th>
-				<td><input type="password" name="senha1" required />Deve conter no mínimo: 1 letra maiúscula, 1 letra minúscula, 1 caracter especial (#,$,%,&,',(,),*,+,,,-) e 8 caracteres</td>
-				
-			</tr>
-			<tr>
-				<th>Confirma a Senha:</th>
-				<td><input type="password" name="senha2" required /></td>
-			</tr>
-			<tr>
 				<td colspan="2"><input type="submit" name="bOK" value="Salvar" />
 				</td>
 			</tr>
